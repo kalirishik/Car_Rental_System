@@ -1,0 +1,561 @@
+/* ===== GLOBAL STYLES ===== */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: linear-gradient(90deg, #020617, #1e293b);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.Header h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #38bdf8;
+}
+
+.Header ul {
+  list-style: none;
+  display: flex;
+  align-items: center; 
+  gap: 30px;
+}
+
+.Header ul li a:hover {
+  color: #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 3px;
+}
+
+.Header ul li a {
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.Header ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.active-link {
+  color: #38bdf8;
+  font-weight: 600;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 3px;
+}
+
+.auth-links {
+  display: flex;
+  gap: 25px;   /* ✅ space between Admin & Login */
+}
+
+/* ===== HOME (HERO SECTION) ===== */
+.Home {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.Home h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.Home p {
+  font-size: 18px;
+  color: #cbd5f5;
+  margin-bottom: 30px;
+}
+
+.Home button {
+  padding: 12px 30px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Home button a {
+  text-decoration: none;
+  color: black;
+}
+
+.Home button:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+.Footer {
+  text-align: center;
+  padding: 15px;
+  background: #020617;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Header ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .Home h1 {
+    font-size: 32px;
+  }
+}
+
+/* ===== ABOUT PAGE ===== */
+.About {
+  padding: 60px 20px;
+  /* background: #0f172a; */
+  color: white;
+  min-height: 80vh;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.about-container p {
+  font-size: 18px;
+  color: #cbd5f5;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.about-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.about-section h2 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}
+
+.about-section ul li {
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+.luxury {
+  text-align: center;
+}
+
+.luxury-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  margin: 15px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+.luxury-img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== LOGIN & REGISTER PAGE ===== */
+.Login, .Register {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+              url("https://images.unsplash.com/photo-1493238792000-8113da705763");
+  background-size: cover;
+  background-position: center; */
+}
+
+/* ===== FORM CARD ===== */
+.login-form, .register-form {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 15px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: fadeIn 0.8s ease-in-out;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ===== INPUT FIELDS ===== */
+.login-form input,
+.register-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #0f172a;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+/* ===== BUTTON ===== */
+.login-form button,
+.register-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover,
+.register-form button:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* ===== LINK BUTTON ===== */
+.Login p,
+.Register p {
+  margin-top: 15px;
+  text-align: center;
+  color: #cbd5f5;
+}
+
+.Login button,
+.Register button {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color:whitesmoke;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Login button a,
+.Register button a {
+  text-decoration: none;
+  color: #38bdf8;
+}
+
+.Login button:hover,
+.Register button:hover {
+  background: #38bdf8;
+}
+
+.Login button:hover a,
+.Register button:hover a {
+  color: black;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-text {
+  text-align: center;
+  color: #cbd5f5;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.link-btn {
+  text-align: center;
+  display: block;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.link-btn:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+.auth-img1 {
+  width: 40%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto 15px auto;
+  display: block;  
+}
+
+.auth-img2 {
+  width: 35%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto 1px auto;
+  display: block;  
+}
+.auth-img3 {
+  width: 40%;
+  height:100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto 15px auto;
+  display: block;  
+}
+
+.home-title {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.inline-car {
+  width: 70px;
+  height: auto;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  z-index: 1000;
+  animation: slideIn 0.4s ease;
+}
+
+.popup.success {
+  background: #22c55e;
+}
+
+.popup.fail {
+  background: #ef4444;
+}
+
+/* ANIMATION */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 32px;              /* ✅ same height as nav items */
+}
+
+/* username */
+.user-name {
+  display: flex;
+  align-items: center;
+  color: #38bdf8;
+  font-size: 18px;
+}
+
+/* logout button */
+.logout-btn {
+  height: 28px;              /* ✅ match nav height */
+  padding: 5px;
+
+  border-radius: 20px;
+  border: none;
+
+  background: #ef4444;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:15px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: red;
+}
+
+/* CONTAINER */
+.cars-container {
+  padding: 40px;
+  background: #0f172a;
+  min-height: 100vh;
+}
+
+/* TITLE */
+.cars-title {
+  text-align: center;
+  color: whitesmoke;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* CARD */
+.car-card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.no-cars {
+  grid-column: 1 / -1;  /* full width */
+  text-align: center;
+  color: #f87171;
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+}
+
+/* IMAGE */
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* INFO */
+.car-info {
+  padding: 15px;
+  color: white;
+}
+
+.car-info h3 {
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.book-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #0ea5e9;
+}
+
+.available {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.not-available {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.search-input {
+  width: 300px;
+  height: 70px;
+  padding: 15px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1e293b;
+  color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  font-size: 20px;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
