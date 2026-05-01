@@ -559,3 +559,207 @@ button:disabled {
   color: #94a3b8;
 }
 
+
+.popup2 {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  z-index: 999;
+  animation: fadeInOut 2s ease;
+}
+
+.success2 {
+  background: #22c55e;
+}
+
+.fail2 {
+  background: #ef4444;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+
+/* manage cars */
+
+/* ===== CONTAINER ===== */
+.manage-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+}
+
+/* ===== TITLE ===== */
+.manage-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+
+/* ===== FORM ===== */
+.car-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* INPUT */
+.car-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #020617;
+  color: white;
+  transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+.car-form input:focus {
+  box-shadow: 0 0 8px #38bdf8;
+  transform: scale(1.02);
+}
+
+/* SUBMIT BUTTON */
+.car-form button {
+  grid-column: span 3;
+  padding: 12px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.car-form button:hover {
+  background: linear-gradient(90deg, #0ea5e9, #0284c7);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+}
+
+/* ===== TABLE ===== */
+.car-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* HEADER */
+.car-table th {
+  background: #1e293b;
+  color: #38bdf8;
+  padding: 12px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* ROW */
+.car-table td {
+  padding: 12px;
+  border-bottom: 1px solid #334155;
+  transition: 0.3s;
+}
+
+/* ROW HOVER */
+.car-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.1);
+  transform: scale(1.01);
+}
+
+/* ===== BUTTONS ===== */
+.edit-btn {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* EDIT HOVER */
+.edit-btn:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.4);
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* DELETE HOVER */
+.delete-btn:hover {
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+/* ALIGN */
+.car-table th,
+.car-table td {
+  text-align: center;
+}
+
+/* ACTION BUTTONS */
+.action-cell {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* STATUS */
+.available {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.not-available {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+/* CHECKBOX */
+.checkbox-group {
+  grid-column: span 3;
+  text-align: center;
+  color: #38bdf8;
+}
+
+/* IMAGE PREVIEW */
+.preview-img {
+  grid-column: span 3;
+  width: 150px;
+  margin: auto;
+  border-radius: 10px;
+}

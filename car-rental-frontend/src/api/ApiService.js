@@ -10,3 +10,8 @@ export const existsByEmailAndPassword=(user)=>axios.post(`${USER_API}/findUser`,
 
 export const getAllCars = () => axios.get(`${CAR_API}/getAllCars`);
 
+export const createCar = (car) => axios.post(`${CAR_API}/addCar`, car);
+
+export const updateCar = (id, car) => axios.put(`${CAR_API}/updateCar/${id}`, car);
+
+export const deleteCar = (id) => axios.delete(`${CAR_API}/deleteCar/${id}`);

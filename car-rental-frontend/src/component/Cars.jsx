@@ -11,13 +11,21 @@ const Cars = () => {
     })
   }, []);
 
-  const filteredCars = carData.filter((car) =>
-    car.available &&
-    (
-      car.name.toLowerCase().includes(searchData.toLowerCase()) ||
-      car.brand.toLowerCase().includes(searchData.toLowerCase())
-    )
-  );
+  const filteredCars = carData.filter((car) => {
+    const search = searchData.toLowerCase();
+
+    // 👉 If no search → show all cars
+    if (!search) return true;
+
+    // 👉 If searching → only available + match search
+    return (
+      car.available &&
+      (
+        car.name.toLowerCase().includes(search) ||
+        car.brand.toLowerCase().includes(search)
+      )
+    );
+  });
 
   return (
     <div className="cars-container">
@@ -42,7 +50,9 @@ const Cars = () => {
                 <p>⛽ {car.fuelType}</p>
                 <p>👥 {car.seats} Seats</p>
 
-                <p className="available">✅ Available</p>
+                <p className={car.available ? "available" : "not-available"}>
+                  {car.available ? "✅ Available" : "❌ Not Available"}
+                </p>
 
                 <button className="book-btn">Book Now</button>
               </div>
@@ -50,7 +60,7 @@ const Cars = () => {
           ))
         ) : (
           <div className="no-cars">
-            🚫 No Cars Available
+            {searchData ? "🔍 No matching available cars" : "🚫 No Cars Available"}
           </div>
         )}
       </div>
