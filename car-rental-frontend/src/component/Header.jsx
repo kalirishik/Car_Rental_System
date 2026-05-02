@@ -15,6 +15,9 @@ const Header = () => {
         localStorage.clear();
         navigate("/");
     };
+    // const isCarsActive =
+    //     location.pathname === "/cars" ||
+    //     location.pathname.startsWith("/book");
     return (
         <div className='Header'>
             <h1>RENTWHEELS</h1>
@@ -31,6 +34,18 @@ const Header = () => {
                             <li>
                                 <NavLink to="/cars" className={({ isActive }) => isActive ? "active-link" : ""}>
                                     Cars
+                                </NavLink>
+                            </li>
+
+                            {/* <NavLink
+                                to="/cars"
+                                className={isCarsActive ? "active-link" : ""}
+                            >
+                                Cars
+                            </NavLink> */}
+                            <li>
+                                <NavLink to="/myBookings" className={({ isActive }) => isActive ? "active-link" : ""}>
+                                    My Bookings
                                 </NavLink>
                             </li>
                             <li>
@@ -52,7 +67,11 @@ const Header = () => {
                     {role === 'ADMIN' && (
                         <>
                             <li>
-                                <NavLink to="/booking" className={({ isActive }) => isActive ? "active-link" : ""}>Booking</NavLink>
+                                <NavLink to="/bookingRequests" className={({ isActive }) => isActive ? "active-link" : ""}>Booking Requests</NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink to="/bookingDetails" className={({ isActive }) => isActive ? "active-link" : ""}>Booking Details</NavLink>
                             </li>
 
                             <li>

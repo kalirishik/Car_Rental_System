@@ -132,11 +132,20 @@ const ManageCars = () => {
       imageUrl: ""
     });
   };
+  const handleCar = () => {
+    resetForm();
+    setEditId(null);
+  }
 
   return (
     <div className="manage-container">
 
-      <h2>🚗 Manage Cars</h2>
+      <div className="manage-header">
+        <h2>🚗 Manage Cars</h2>
+        <button onClick={handleCar} className="add-car">
+          + Add Car
+        </button>
+      </div>
 
       {showPopup && (
         <div className={`popup2 ${isSuccess ? "success2" : "fail2"}`}>

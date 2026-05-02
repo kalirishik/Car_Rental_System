@@ -22,7 +22,7 @@ const Adminlogin = () => {
                 setPassword('');
                 setLoading(false);
                 setTimeout(() => {
-                    navigate("/booking");
+                    navigate("/bookingRequests");
                 }, 1000);
         }
         else{

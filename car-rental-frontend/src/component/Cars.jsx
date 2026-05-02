@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getAllCars } from "../api/ApiService";
+import { useNavigate } from "react-router-dom";
 
 const Cars = () => {
   const [carData, setCarData] = useState([]);
   const [searchData, setSearchData] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     getAllCars().then((response) => {
@@ -14,10 +16,8 @@ const Cars = () => {
   const filteredCars = carData.filter((car) => {
     const search = searchData.toLowerCase();
 
-    // 👉 If no search → show all cars
     if (!search) return true;
 
-    // 👉 If searching → only available + match search
     return (
       car.available &&
       (
@@ -26,6 +26,8 @@ const Cars = () => {
       )
     );
   });
+
+  const admin = localStorage.getItem("admin");
 
   return (
     <div className="cars-container">
@@ -53,8 +55,15 @@ const Cars = () => {
                 <p className={car.available ? "available" : "not-available"}>
                   {car.available ? "✅ Available" : "❌ Not Available"}
                 </p>
-
-                <button className="book-btn">Book Now</button>
+                {!admin &&
+                  <button
+                    className="book-btn"
+                    disabled={!car.available}
+                    onClick={() => navigate(`/book/${car.id}`, { state: car })}
+                  >
+                    {car.available ? "Book Now" : "Unavailable"}
+                  </button>
+                }
               </div>
             </div>
           ))
