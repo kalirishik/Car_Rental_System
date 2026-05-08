@@ -50,7 +50,7 @@ const BookingDetails = () => {
           type="text"
           placeholder="Search by user or car..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)} autoFocus
         />
 
         <select

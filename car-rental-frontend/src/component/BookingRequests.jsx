@@ -4,7 +4,7 @@ import { getAllBookings, updateBooking } from "../api/ApiService";
 const BookingRequests = () => {
 
   const [bookings, setBookings] = useState([]);
-  const [statusFilter, setStatusFilter] = useState(""); // 🔥 filter state
+  // const [statusFilter, setStatusFilter] = useState(""); // 🔥 filter state
 
   useEffect(() => {
     loadBookings();
@@ -22,9 +22,11 @@ const BookingRequests = () => {
   };
 
   // 🔍 Apply filter
-  const filteredBookings = statusFilter
-    ? bookings.filter(b => b.status === statusFilter)
-    : bookings;
+  // const filteredBookings = statusFilter
+  //   ? bookings.filter(b => b.status === statusFilter)
+  //   : bookings;
+
+  const pendingBookings = bookings.filter(b => b.status === "PENDING");
 
   return (
     <div className="admin-booking-container">
@@ -32,7 +34,7 @@ const BookingRequests = () => {
       <h2>📋 Booking Requests</h2>
 
       {/* 🔍 FILTER DROPDOWN */}
-      <div className="filter-bar">
+      {/* <div className="filter-bar">
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
@@ -42,7 +44,7 @@ const BookingRequests = () => {
           <option value="APPROVED">Approved</option>
           <option value="REJECTED">Rejected</option>
         </select>
-      </div>
+      </div> */}
 
       <table className="booking-table">
         <thead>
@@ -58,15 +60,17 @@ const BookingRequests = () => {
         </thead>
 
         <tbody>
-          {filteredBookings.length > 0 ? (
-            filteredBookings.map(b => (
+          {/* {filteredBookings.length > 0 ? (
+            filteredBookings.map(b => ( */}
+          {pendingBookings.length > 0 ? (
+            pendingBookings.map(b => (
               <tr key={b.id}>
                 <td>{b.carId}</td>
                 <td>{b.carName}</td>
                 <td>{b.userEmail}</td>
                 <td>{b.startDate}</td>
                 <td>{b.endDate}</td>
-
+                
                 <td className={`status ${b.status.toLowerCase()}`}>
                   {b.status}
                 </td>
