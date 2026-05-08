@@ -103,7 +103,6 @@ const BookingRequests = () => {
           )}
         </tbody>
       </table>
-
     </div>
   );
 };
